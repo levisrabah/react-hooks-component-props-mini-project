@@ -1,15 +1,33 @@
 import React from "react";
-import blogData from "../data/blog";
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
 
-console.log(blogData);
+const App = () => {
+  
+  const blogName = 'Overreacted';
+  const blogImage = ''; 
+  const blogAbout = 'I explain with words and code.';
+  const posts = [
+    { title: 'The WET Codebase', date: 'July 13, 2020', readTime: '1 min read' },
+    { title: 'Come waste your time with me.', date: 'January 11, 2020', readTime: '5 min read' },
+    { title: 'Goodbye, Clean Code', date: 'January 1, 2020', readTime: '26 min read' },
+    
+  ];
 
-function App() {
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header name={blogName} />
+      <About image={blogImage} about={blogAbout} />
+      <ArticleList posts={posts} />
+      
     </div>
   );
-}
+};
 
 export default App;
+
+
+
+
+
